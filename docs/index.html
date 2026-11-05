@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="An experiment in the weight of words. Type or speak a message, explore its data size and everyday energy references, and collect a physical receipt.">
+  <title>The Weight of Information — Exchange Station</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landscape.css">
+  <script type="module" src="layout.js"></script><script type="module" src="app.js"></script>
+</head>
+<body>
+<div id="station-stage"><div id="station-frame" class="station-frame">
+<a class="skip" href="#message">Skip to message</a>
+<header class="masthead">
+  <a class="brand" href="./" aria-label="The Weight of Information home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>THE WEIGHT<br>OF INFORMATION</span></a>
+  <div class="station-label"><span class="tiny" data-i18n="station">EXPERIMENT 01 / EXCHANGE STATION</span><span id="clock">--:--:--</span></div>
+  <div class="header-actions"><button class="language" id="language" aria-label="Switch to Chinese">中文</button><button class="test-button" id="test-print"><span class="pixel-printer" aria-hidden="true">▤</span><span data-i18n="test">TEST PRINT</span></button></div>
+</header>
+<main>
+  <section id="input-screen" class="screen">
+    <div class="intro"><div class="intro-copy"><p class="eyebrow"><span class="solid-square"></span><span data-i18n="projectTag">A MATERIAL EXPERIMENT</span></p><h1 data-i18n-html="title">WHAT DOES<br>YOUR MESSAGE<br><span class="outline-word">WEIGH?</span></h1><p class="intro-text" data-i18n="intro">A message feels weightless. Give yours a physical form.</p></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-coordinate">FIG. 01 — FROM BITS TO MATTER</div><svg class="exchange-art" viewBox="0 0 360 220" shape-rendering="crispEdges"><g fill="currentColor"><path d="M40 25h80v8H40zm-8 8h8v56h-8zm88 0h8v48h-8zM40 81h64v8H40zm8 8h8v24h-8zm8 0h8v16h-8zm8-32h8v8h-8zm16 0h8v8h-8zm16 0h8v8h-8z"/><path d="M152 57h8v8h-8zm16 8h8v8h-8zm16-8h8v8h-8zm-16 16h8v8h-8zm16 16h8v8h-8zm16-16h8v8h-8zm-16 32h8v8h-8zm32-8h8v8h-8zm8-32h8v8h-8z"/><path d="M260 25h64v8h-64zm-8 8h8v80h-8zm72 0h8v80h-8zm-64 80h8v8h-8zm16 0h8v8h-8zm16 0h8v8h-8zm16 0h8v8h-8zm-40-64h48v8h-48zm0 16h48v8h-48zm0 16h32v8h-32z"/><path d="M56 153h72v8H56zm-8 8h8v16h-8zm80 0h8v16h-8zm-72 16h72v8H56zm32-64h8v40h-8zm0 72h8v16h-8zm8 8h80v8H96zm80-8h8v16h-8zm8 8h80v8h-80zm80-8h8v16h-8zm-32-32h72v8h-72zm-8 8h8v16h-8zm80 0h8v16h-8zm-72 16h72v8h-72zm32-56h8v32h-8zm-96 56h24v8h-24zm8-64h8v64h-8zm-8 88h24v8h-24z"/></g></svg><div class="art-caption"><span>INPUT / OUTPUT</span><span>001 → ∞</span></div></div>
+    </div>
+    <div class="steps" aria-label="Exchange process"><span class="active"><b>01</b><span data-i18n="step1">LEAVE A MESSAGE</span></span><span><b>02</b><span data-i18n="step2">SEE ITS WEIGHT</span></span><span><b>03</b><span data-i18n="step3">COLLECT THE TRACE</span></span></div>
+    <div class="workspace">
+      <section class="input-panel" aria-label="Message input">
+        <div class="panel-heading"><span class="tiny" data-i18n="inputHeading">INPUT TERMINAL</span><span class="tiny">[ 01 ]</span></div>
+        <div class="mode-tabs" role="tablist" aria-label="Input method"><button id="type-tab" class="mode-tab active" role="tab" aria-selected="true" data-mode="text"><span aria-hidden="true">⌨</span><span data-i18n="type">TYPE</span></button><button id="speak-tab" class="mode-tab" role="tab" aria-selected="false" data-mode="speech"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1h4v9H6zM3 7h2v4h6V7h2v6H9v2H7v-2H3z"/></svg><span data-i18n="speak">SPEAK</span></button></div>
+        <div id="speech-controls" hidden><div class="speech-row"><label for="speech-language" data-i18n="spokenLanguage">Spoken language</label><select id="speech-language"><option value="en-GB">English (UK)</option><option value="zh-CN">中文（普通话）</option></select></div><button id="record" class="record-button"><span class="record-dot"></span><span data-i18n="record">START SPEAKING</span></button><p class="speech-note" data-i18n="speechNote">Your browser may process audio online. Review the transcript before exchanging.</p><p id="speech-status" class="speech-status" role="status"></p></div>
+        <label class="message-label" for="message" data-i18n="messageLabel">What would you like to say?</label>
+        <div class="textarea-wrap"><textarea id="message" spellcheck="true" placeholder="Type something you want to tell someone…" aria-describedby="input-error character-count"></textarea><span class="cursor-block" aria-hidden="true"></span></div>
+        <div class="input-meta"><span data-i18n="reviewHint">Your words. Exactly as you leave them.</span><span id="character-count">0 / 500</span></div>
+        <p class="error" id="input-error" role="alert"></p>
+        <button id="exchange" class="primary" disabled><span data-i18n="exchange">EXCHANGE MESSAGE</span><span class="arrow" aria-hidden="true">↗</span></button>
+      </section>
+      <aside class="output-panel"><div class="panel-heading"><span class="tiny" data-i18n="outputHeading">ON THE OTHER SIDE</span><span class="tiny">[ 02–03 ]</span></div><div class="pixel-stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><h2 data-i18n-html="outputTitle">A FEW WORDS.<br>A PHYSICAL TRACE.</h2><p data-i18n="outputText">Discover your message’s data size, its energy references, and the material it exchanges for.</p><div class="output-bottom"><span class="status-dot" id="printer-dot"></span><span id="printer-status">PRINTER OFFLINE</span><span class="tiny" data-i18n="autoPrint">AUTO PRINT</span></div></aside>
+    </div>
+    <p class="under-note"><span aria-hidden="true">↳</span><span data-i18n="inputNote">One message, one exchange. Your receipt is sent automatically at the end.</span></p>
+  </section>
+  <section id="loading-screen" class="screen loading-screen" hidden aria-live="polite"><div class="loading-pixels" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="eyebrow" data-i18n="measuring">MEASURING YOUR MESSAGE</p><h2 class="pixel-title" data-i18n-html="loadingTitle">WORDS IN.<br>MATTER OUT.</h2><div class="loading-track"><span></span></div></section>
+  <section id="result-screen" class="screen" hidden aria-label="Exchange result">
+    <div class="result-heading"><div><p class="eyebrow"><span class="solid-square"></span><span data-i18n="resultTag">EXCHANGE COMPLETE</span><span id="result-id"></span></p><h1 data-i18n-html="resultTitle">YOUR WORDS,<br>MADE TANGIBLE.</h1></div><span class="result-symbol" aria-hidden="true">↙</span></div>
+    <div class="result-grid"><div class="result-main"><blockquote id="result-message"></blockquote><div class="data-strip"><div><span class="tiny" data-i18n="dataSize">DATA SIZE</span><strong><span id="result-bytes">0</span><small>bytes</small></strong></div><div><span class="tiny" data-i18n="networkEnergy">MODELLED NETWORK ENERGY</span><strong><span id="result-energy">0</span><small id="energy-unit">mJ</small></strong></div></div>
+      <div class="equivalent-heading"><h2 class="tiny" data-i18n="equivalentTitle">THE SAME ENERGY, TWO EVERYDAY REFERENCES</h2><button class="text-button" data-open="method-dialog" data-i18n="how">HOW IS THIS CALCULATED? ↗</button></div>
+      <div class="equivalents"><article class="equivalent"><svg viewBox="0 0 64 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M8 22h48v4H8zm4 4h4v8h-4zm4 8h4v4h-4zm4 4h24v4H20zm24-4h4v4h-4zm4-8h4v8h-4zM20 12h4v4h-4zm8-4h4v4h-4zm8 8h4v4h-4zm8-8h4v4h-4zm-28 8h4v4h-4zm16-4h4v4h-4z"/></svg><span class="tiny" data-i18n="foodLabel">FOOD / COOKED RICE</span><div class="equivalent-value"><span id="result-rice">0</span><small id="rice-unit">µg</small></div><p data-i18n="riceDescription">contains this much food energy</p></article><article class="equivalent"><svg viewBox="0 0 64 48" aria-hidden="true" shape-rendering="crispEdges"><path d="M24 4h16v4H24zm-4 4h4v4h-4zm20 0h4v4h-4zm-24 4h4v12h-4zm28 0h4v12h-4zm-24 12h4v8h-4zm20 0h4v8h-4zm-16 8h16v4H24zm0 8h16v4H24zm4 4h8v4h-8zM4 16h8v4H4zm48 0h8v4h-8zM8 0h4v4H8zm44 0h4v4h-4z"/></svg><span class="tiny" data-i18n="lightLabel">LIGHT / 5 W LED</span><div class="equivalent-value"><span id="result-lamp">0</span><small id="lamp-unit">ms</small></div><p data-i18n="lampDescription">of light from a 5-watt LED</p></article></div>
+      <p class="model-note" data-i18n="modelNote">A data-based allocation, not a meter reading. Both references describe the same estimated energy.</p>
+      <div class="material-result"><div><span class="tiny" data-i18n="materialTitle">YOUR MATERIAL EXCHANGE</span><p id="material-rate"></p></div><div><strong id="material-units">0</strong><span data-i18n="paperUnits">paper units</span></div></div>
+      <button id="new-message" class="primary"><span data-i18n="another">ANOTHER MESSAGE</span><span aria-hidden="true">↗</span></button>
+    </div><aside class="receipt-column"><div class="receipt-caption"><span class="tiny" data-i18n="receiptCaption">YOUR PHYSICAL RECORD</span><span>↓</span></div><div class="receipt-paper"><canvas id="receipt" width="384" height="1000" aria-label="Receipt preview"></canvas></div><p id="print-result" class="print-result" role="status"></p></aside></div>
+  </section>
+</main>
+<footer><span>THE WEIGHT OF INFORMATION © 2026</span><div><button data-open="method-dialog" data-i18n="method">THE METHOD</button><span>/</span><button data-open="settings-dialog" data-i18n="setup">STATION SETUP</button></div><span class="footer-tag" data-i18n="footer">SMALL WORDS. MATERIAL CONSEQUENCES.</span></footer>
+</div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="method-dialog"><div class="dialog-header"><h2 data-i18n="method">THE METHOD</h2><button class="close" aria-label="Close dialog">×</button></div><div id="method-content"></div></dialog>
+<dialog id="settings-dialog"><div class="dialog-header"><h2 data-i18n="setup">STATION SETUP</h2><button class="close" aria-label="Close dialog">×</button></div><p data-i18n="setupDescription">Operator settings for the physical experiment.</p><label for="material-setting" data-i18n="rateLabel">Bytes per paper unit</label><input id="material-setting" type="number" min="1" max="10000" step="1" value="20"><p class="small" data-i18n="rateNote">An experimental rule, rounded up to whole units. Define one paper unit with your chosen material before the session.</p><button id="save-settings" class="primary" data-i18n="saveSettings">SAVE EXCHANGE RATE</button><hr><h3 data-i18n="automaticPrinting">AUTOMATIC RECEIPT PRINTING</h3><p id="connection-detail"></p><div id="windows-instructions"><ol><li data-i18n="setup1">Connect your NETUM printer and make sure its Windows test page works.</li><li data-i18n="setup2">Download and extract the station package. Double-click START_STATION.cmd.</li><li data-i18n="setup3">Select your printer. Use the local webpage that opens, and keep the station window open.</li></ol><a class="download" href="downloads/Information_Station_Windows.zip" download data-i18n="download">DOWNLOAD WINDOWS STATION ↗</a><p class="small" data-i18n="setupNote">No Python or Node installation needed. Printing uses your installed Windows printer queue. Voice input may still need an internet connection.</p></div></dialog>
+</body></html>

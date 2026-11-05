@@ -1,0 +1,6 @@
+.env*
+node_modules/
+station-state/
+*.tar.gz
+*.log
+.station-build/
