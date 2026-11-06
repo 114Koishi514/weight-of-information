@@ -1,0 +1,39 @@
+#print-root { display: none; }
+
+@media print {
+  html,
+  body {
+    width: 48mm !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    transform: none !important;
+  }
+
+  body > :not(#print-root) { display: none !important; }
+
+  #print-root {
+    display: block !important;
+    position: static !important;
+    width: 48mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  #print-root canvas {
+    display: block !important;
+    width: 48mm !important;
+    height: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    image-rendering: pixelated;
+  }
+}

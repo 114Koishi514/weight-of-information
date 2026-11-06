@@ -9,7 +9,10 @@ THE WEIGHT OF INFORMATION — WINDOWS STATION / V1
 6. 参与者打字或说话、确认文字、点击交换。结算后自动发送小票，无需打印对话框。
 7. 保持启动窗口开启；关闭窗口即停止实验站。无需安装 Python 或 Node。
 
-只在本地网页中自动实体打印。线上版本提供同款体验和小票预览。
+本地网页结算后直接自动打印，不弹确认窗口。
+GitHub 线上网页也可以打印：点击“测试打印”或完成一次交换后，会打开系统打印窗口。
+选择 NETUM 打印机、58 mm 纸张、纵向、100% 缩放，并关闭页眉页脚，然后点击打印。
+如窗口没有出现，可按 Ctrl+P 打印当前小票。关闭或取消窗口不代表已经出纸。
 本程序使用 Windows 自带 PowerShell 编译附带的 C# 代码，不会安装后台服务，也不会更改系统级执行策略。
 如学校电脑阻止本地脚本，请联系设备管理员允许该实验程序；无需管理员权限的本地端口为 8765。
 
@@ -44,6 +47,9 @@ THE WEIGHT OF INFORMATION — WINDOWS STATION / V1
 Extract the whole package. Run START_STATION.cmd, choose the physical NETUM queue, and keep the console open.
 Use the local page opened at http://127.0.0.1:8765/ in Chrome. TEST PRINT checks the paper and margins.
 Each confirmed exchange submits one receipt automatically. There is no normal print button or print dialog.
+The online GitHub page instead opens the system print dialog for each exchange or TEST PRINT.
+Select NETUM, 58 mm paper, portrait and 100% scale; turn off headers and footers and confirm Print.
+Ctrl+P prints the current complete receipt. Closing the print dialog does not confirm paper output.
 Receipt labels are English; message text is retained in its original language.
 The print service binds only to loopback and rejects cross-origin requests. It cannot be used remotely.
 
