@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#174aa9">
+<title>PTS2000 · Public Access Terminal</title>
+<link rel="icon" href="assets/desktop/start.png">
+<link rel="stylesheet" href="desktop.css">
+<script defer src="config.js"></script>
+<script defer src="language.js"></script>
+<script defer src="codebook.js"></script>
+<script defer src="codec.js"></script>
+<script defer src="record.js"></script>
+<script defer src="receipt.js"></script>
+<script defer src="print-station.js"></script>
+<script defer src="archive.js"></script>
+<script defer src="file-entry.js"></script>
+<script defer src="apps.js"></script>
+<script defer src="reception.js"></script>
+<script defer src="developer.js"></script>
+<script defer src="shell.js"></script>
+</head>
+<body>
+<div id="terminal-frame"><div id="screen" class="curved">
+  <section id="boot" aria-label="Terminal startup">
+    <span class="boot-sign">PUBLIC TRANSMISSION SERVICE / UNITED KINGDOM</span>
+    <div class="large-wordmark">PTS2000</div>
+    <div id="boot-art"></div><div id="boot-log" role="status" aria-live="polite"></div>
+    <button id="skip-boot" type="button">ENTER &nbsp; SKIP STARTUP</button>
+  </section>
+  <div id="desktop" hidden>
+    <header class="system-header">
+      <div class="service-name"><span class="small-wordmark">PTS</span><span class="header-divider" aria-hidden="true"></span><span>PUBLIC TRANSMISSION SERVICE</span></div>
+      <div class="header-unit"><span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span>UK <span class="muted">/</span> TERMINAL 01</div>
+    </header>
+    <main id="workarea" aria-label="PTS2000 desktop">
+      <div id="wallpaper" aria-hidden="true"></div>
+      <nav id="shortcuts" aria-label="Desktop applications"></nav>
+      <span id="desktop-hint" class="desktop-hint">Double-click an application to open.</span>
+      <div id="windows"></div>
+    </main>
+    <footer class="taskbar" aria-label="Taskbar">
+      <button id="start" type="button" aria-controls="start-menu" aria-expanded="false"><img class="start-mark" src="assets/desktop/start.png" alt="">START</button>
+      <div class="task-divider"></div><div id="tasks" aria-label="Open windows"></div>
+      <div class="tray"><span class="status-lamp"></span><span class="tray-label">REGISTRY ONLINE</span><span class="tray-divider"></span><time id="clock"></time></div>
+    </footer>
+    <div id="start-menu" class="start-menu" hidden></div>
+  </div>
+  <div class="tube-glass" aria-hidden="true"></div>
+</div>
+</div>
+<dialog id="modal"><div class="modal-title"><span id="modal-title"></span><button type="button" id="modal-close" aria-label="Close dialog">×</button></div><div id="modal-content"></div></dialog>
+<div id="print-surface" aria-hidden="true"></div>
+<noscript>This terminal requires JavaScript to register and encode a message.</noscript>
+</body>
+</html>
